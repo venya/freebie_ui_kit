@@ -4,6 +4,127 @@
 *	@author: Veniamin Zolotukhin <venya@venya.com>;
 */
 
+@import "reset";
 @import "globals";
 
 
+
+.header {
+	$height: 56px;
+
+	height: 56px;
+	background: $color-ltgray;
+	border-bottom: solid $color-gray 1px;
+
+	&_rainbow {
+		$height: 4px;
+
+		padding-top: $height;
+
+		&::before {
+			content:"";
+			position: relative;
+			top: -$height;
+			margin-bottom: -$height;
+			display: block;
+			height: $height;
+			background: $color-red;
+		}
+	}
+}
+
+.nav {
+	$height: 56px;
+	$item-padding: 15px;
+
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 -$item-padding;
+
+	&__item {
+		display: inline-block;
+		line-height: $height;
+		height: $height;
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 0 $item-padding;
+		height: $height;
+		line-height: $height;
+		color: $color-dkgray;
+		text-decoration: none;
+	}
+}
+
+
+.switch {
+	$height: 25px;
+	$width: 50px;
+	$border: 3px;
+
+	display: inline-block;
+	box-sizing: border-box;
+	width: $width;
+	height: $height;
+	background: $color-red;
+	border-radius: 3px;
+	position: relative;
+
+	&__marker {
+		$size: $height - 2*$border;
+
+		display: inline-block;
+		background: white;
+		width: $size;
+		height: $size;
+		position: relative;
+		top: $border;
+		left: $border;
+		border-radius: 2px;
+
+		.switch_rounded & {
+			/*$border: 2px;*/
+			border-radius: $height/2;
+		}
+	}
+
+	&_rounded {
+		$border: 2px;
+		border-radius: $height/2;
+
+	}
+
+	&::after {
+		content: "OFF";
+		color: white;
+		position: absolute;
+		line-height: $height;
+		font-size: 11px;
+		right: $border;
+	};
+
+	&_on {
+		background: $color-green;
+
+		&::after {
+			content: "ON";
+			right: auto;
+			left: $border;
+		};
+
+		& .switch__marker {
+			left: $width - $height + $border;
+		}
+	}
+
+	&__checkbox {
+		position: absolute;
+		opacity: 0.1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+}

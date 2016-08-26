@@ -6,9 +6,20 @@
 */
 
 
+/*	Layout	*/
+$page-width: 760px;
+
+/*	Colors	*/
 $background: white;
 
 
 body {
+	margin: 0;
 	background: $background;
+}
+
+.container {
+	width: $page-width;
+	margin-left: auto;
+	margin-right: auto;
 }
