@@ -17,7 +17,7 @@ body {
 	$height: 56px;
 
 	height: 56px;
-	background: $color-ltgray;
+	background: $color-xltgray;
 	border-bottom: solid $color-gray 1px;
 
 	&_rainbow {
@@ -32,7 +32,14 @@ body {
 			margin-bottom: -$height;
 			display: block;
 			height: $height;
-			background: $color-red;
+			background: $color-red
+				linear-gradient(90deg,
+					$color-blue 25%,
+					$color-red 25%, $color-red 50%,
+					$color-orange 50%, $color-orange 75%,
+					$color-green 75%
+				) repeat 20px top;
+			background-size: 520px;
 		}
 	}
 }
@@ -135,4 +142,49 @@ body {
 		z-index: 2;
 	}
 
+}
+
+
+.pie-chart {
+	$size: 80px;
+	$color-empty: $color-ltgray;
+	$color-filled: $color-green;
+	$color-text: $color-dkgray;
+
+	display: inline-block;
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color-filled;
+	vertical-align: bottom;
+	overflow: hidden;
+	position: relative;
+
+	&__segment {
+		background: $color-empty;
+		display: block;
+		width: $size/2;
+		height: $size/2;
+		position: absolute;
+		z-index: 1;
+	}
+
+	&__inner {
+		$thickness: 5px;
+		$size: $size - 2*$thickness;
+
+		margin: 5px;
+		background: white;
+		display: block;
+		width: $size;
+		height: $size;
+		line-height: $size;
+		border-radius: $size/2;
+		text-align: center;
+		color: $color-text;
+		font-size: 25px;
+		font-weight: 300;
+		position: absolute;
+		z-index: 2;
+	}
 }
