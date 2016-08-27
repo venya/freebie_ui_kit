@@ -42,6 +42,14 @@ body {
 			background-size: 520px;
 		}
 	}
+
+	&__form {
+		display: inline-block;
+	}
+
+	.nav {
+		display: inline-block;
+	}
 }
 
 .nav {
@@ -102,7 +110,6 @@ body {
 	}
 
 	&_rounded {
-		$border: 2px;
 		border-radius: $height/2;
 
 	}
@@ -187,4 +194,15 @@ body {
 		position: absolute;
 		z-index: 2;
 	}
+}
+
+
+.player {
+	$height: 160px;
+
+	background: $color-dkgray;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: $height;
+	border-radius: 3px;
 }

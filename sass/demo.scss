@@ -23,3 +23,19 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*	Used for vertical spacing	*/
+section {
+	margin: 30px 0;
+}
+
+/*	Quick and dirty implementation	*/
+.row {
+	display: table;
+	width: 100%;
+
+	.col-4 {
+		display: table-cell;
+		width: 33%;
+	}
+}

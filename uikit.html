@@ -17,49 +17,98 @@
 				<li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
 				<li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
 			</ul>
+
 			<!-- inline search -->
+			<form class="header__form">
+				<input class="search" type="search" placeholder="Search...">
+			</form>
+
 			<!-- notifications -->
+			<div class="icon"></div>
+			<div class="icon"></div>
+
 			<!-- avatar -->
+			<div class="avatar"></div>
 		</div>
 	</header>
 
-	<br>
+	<div class="container">
+		<section>
+			<!-- switch -->
+			<div class="switch switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
+			<div class="switch switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
+			<div class="switch switch_on switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
+			<div class="switch switch_on switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
+			<!-- radio buttons -->
+			<!-- checkboxes -->
 
-	<section class="container">
-		<!-- switch -->
-		<div class="switch switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
-		<div class="switch switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
-		<div class="switch switch_on switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
-		<div class="switch switch_on switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
-		<!-- radio buttons -->
-		<!-- checkboxes -->
-		<!-- pie charts -->
-		<div class="pie-chart">
-			<div class="pie-chart__segment"></div>
-			<div class="pie-chart__inner">75%</div>
-		</div>
-		<div class="pie-chart">
-			<div class="pie-chart__segment"></div>
-		</div>
+			<!-- pie charts -->
+			<div class="pie-chart">
+				<div class="pie-chart__segment"></div>
+				<div class="pie-chart__inner">75%</div>
+			</div>
+			<div class="pie-chart">
+				<div class="pie-chart__segment"></div>
+			</div>
+		</section>
 
 		<div class="row">
 			<div class="col-4">
 				<!-- signin -->
+				<section>
+					<div class="form-row">
+						<input value="John D" placeholder="Username">
+					</div>
+					<div class="form-row">
+						<input type="password" placeholder="Password">
+					</div>
+					<div class="form-row">
+						<button class="btn btn-primary">log in</button>
+					</div>
+				</section>
+
 				<!-- select -->
+				<section>
+					<select>
+						<option>Select Something</option>
+					</select>
+				</section>
 			</div>
 
 			<div class="col-4">
 				<!-- calendar -->
+				<section>
+					October 2014
+				</section>
+
 				<!-- profile -->
+				<section>
+					[user profile]
+				</section>
 			</div>
 
 			<div class="col-4">
 				<!-- range -->
+				<section>
+					<input type="range">
+				</section>
+				<section>
+					<input type="range">
+				</section>
+				<section>
+					<input type="range">
+				</section>
+
 				<!-- player -->
+				<section>
+					<div class="player" style="background-image:url(https://media.giphy.com/media/icamgh2X6Cego/giphy.gif)">
+						[video player]
+					</div>
+				</section>
 			</div>
 		</div>
 		
-	</section>
+	</div>
 
 	<script type="text/javascript" src="js/ui.js"></script>
 </body>
