@@ -1,0 +1,65 @@
+
+.header {
+	$height: 56px;
+
+	height: 56px;
+	background: $color-xltgray;
+	border-bottom: solid $color-gray 1px;
+
+	&_rainbow {
+		$height: 4px;
+
+		padding-top: $height;
+
+		&::before {
+			content:"";
+			position: relative;
+			top: -$height;
+			margin-bottom: -$height;
+			display: block;
+			height: $height;
+			background: $color-red
+				linear-gradient(90deg,
+					$color-blue 25%,
+					$color-red 25%, $color-red 50%,
+					$color-orange 50%, $color-orange 75%,
+					$color-green 75%
+				) repeat 20px top;
+			background-size: 520px;
+		}
+	}
+
+	&__form {
+		display: inline-block;
+	}
+
+	.nav {
+		display: inline-block;
+	}
+}
+
+
+.nav {
+	$height: 56px;
+	$item-padding: 15px;
+
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 -$item-padding;
+
+	&__item {
+		display: inline-block;
+		line-height: $height;
+		height: $height;
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 0 $item-padding;
+		height: $height;
+		line-height: $height;
+		color: $color-dkgray;
+		text-decoration: none;
+	}
+}
+

@@ -8,280 +8,46 @@
 @import "globals";
 
 
+/*	Global settings and typography	*/
+
 body {
 	font-family: $font-stack;
 }
 
 
-.header {
-	$height: 56px;
 
-	height: 56px;
-	background: $color-xltgray;
-	border-bottom: solid $color-gray 1px;
+/*	Utilities */
 
-	&_rainbow {
-		$height: 4px;
-
-		padding-top: $height;
-
-		&::before {
-			content:"";
-			position: relative;
-			top: -$height;
-			margin-bottom: -$height;
-			display: block;
-			height: $height;
-			background: $color-red
-				linear-gradient(90deg,
-					$color-blue 25%,
-					$color-red 25%, $color-red 50%,
-					$color-orange 50%, $color-orange 75%,
-					$color-green 75%
-				) repeat 20px top;
-			background-size: 520px;
-		}
-	}
-
-	&__form {
-		display: inline-block;
-	}
-
-	.nav {
-		display: inline-block;
-	}
+.pull-left {
+	float: right;
+}
+.pull-right {
+	float: right;
 }
 
-.nav {
-	$height: 56px;
-	$item-padding: 15px;
-
-	list-style: none;
-	padding: 0;
-	margin: 0 0 0 -$item-padding;
-
-	&__item {
-		display: inline-block;
-		line-height: $height;
-		height: $height;
-	}
-
-	&__link {
-		display: inline-block;
-		padding: 0 $item-padding;
-		height: $height;
-		line-height: $height;
-		color: $color-dkgray;
-		text-decoration: none;
-	}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
 }
 
 
-.switch {
-	$height: 25px;
-	$width: 50px;
-	$border: 3px;
 
-	display: inline-block;
-	box-sizing: border-box;
-	width: $width;
-	height: $height;
-	background: $color-red;
-	border-radius: 3px;
-	position: relative;
+@import "header";
 
-	&__marker {
-		$size: $height - 2*$border;
+@import "switch";
 
-		display: inline-block;
-		background: white;
-		width: $size;
-		height: $size;
-		position: relative;
-		top: $border;
-		left: $border;
-		border-radius: 2px;
-		transition: left 0.2s ease;
+@import "charts";
 
-		.switch_rounded & {
-			/*$border: 2px;*/
-			border-radius: $height/2;
-		}
-	}
+@import "range";
 
-	&_rounded {
-		border-radius: $height/2;
+@import "panel";
 
-	}
+@import "calendar";
 
-	&::after {
-		content: "OFF";
-		color: white;
-		width: $width - $height;
-		text-align: center;
-		position: absolute;
-		line-height: $height;
-		font-size: 11px;
-		right: $border;
-	};
+@import "player";
 
-	&_on {
-		background: $color-green;
-
-		&::after {
-			content: "ON";
-			right: auto;
-			left: $border;
-		};
-
-		& .switch__marker {
-			left: $width - $height + $border;
-		}
-	}
-
-	&__checkbox {
-		position: absolute;
-		opacity: 0;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
-	}
-
-}
-
-
-.pie-chart {
-	$size: 80px;
-	$color-empty: $color-ltgray;
-	$color-filled: $color-green;
-	$color-text: $color-dkgray;
-
-	display: inline-block;
-	width: $size;
-	height: $size;
-	border-radius: $size/2;
-	background: $color-filled;
-	vertical-align: bottom;
-	overflow: hidden;
-	position: relative;
-
-	&__segment {
-		background: $color-empty;
-		display: block;
-		width: $size/2;
-		height: $size/2;
-		position: absolute;
-		z-index: 1;
-	}
-
-	&__inner {
-		$thickness: 5px;
-		$size: $size - 2*$thickness;
-
-		margin: 5px;
-		background: white;
-		display: block;
-		width: $size;
-		height: $size;
-		line-height: $size;
-		border-radius: $size/2;
-		text-align: center;
-		color: $color-text;
-		font-size: 25px;
-		font-weight: 300;
-		position: absolute;
-		z-index: 2;
-	}
-}
-
-
-.range {
-	$thickness: 5px;
-	$marker-size: 14px;
-
-	position: relative;
-	margin: $thickness;
-
-	&__bar {
-		display: block;
-		height: $thickness;
-		background: $color-ltgray;
-		border-radius: $thickness/2;
-	}
-
-	&__marker {
-		$displace: $marker-size/2;
-
-		box-sizing: border-box;
-		display: block;
-		width: $marker-size;
-		height: $marker-size;
-		position: absolute;
-		background: white;
-		border: solid $color-blue 4px;
-		border-radius: $marker-size/2;
-		top: $thickness/2;
-		margin: -$displace 0 0 (-$displace);
-	}
-
-	&__range {
-		display: block;
-		position: absolute;
-		top: 0;
-		background: $color-blue;
-		height: $thickness;
-		border-radius: $thickness/2;
-	}
-
-	/*	Color modifiers	*/
-	&_green {
-		.range__range {
-			background: $color-green;
-		}
-		.range__marker {
-			border-color: $color-green;
-		}
-	}
-
-	&_orange {
-		.range__range {
-			background: $color-orange;
-		}
-		.range__marker {
-			border-color: $color-orange;
-		}
-	}
-
-}
-
-
-.player {
-	$height: 160px;
-	$controls-height: 32px;
-	$controls-margin: 15px;
-
-	background: black;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: white;
-	border-radius: 3px;
-	position: relative;
-	overflow: hidden;
-
-	&__video {
-		display: block;
-		width: 100%;
-	}
-
-	&__controls {
-		height: $controls-height;
-		background: rgba(255,255,255, 0.2);
-		border-radius: 3px;
-		position: absolute;
-		bottom: $controls-margin;
-		right: $controls-margin;
-		left: $controls-margin;
-	}
-}

@@ -1,0 +1,63 @@
+
+.calendar {
+	$size: 26px;
+	$spacing: 5px;
+	$radius: $size / 2;
+
+	overflow: hidden;
+	color: $color-dkgray;
+	font-size: 14px;
+	/*letter-spacing: -1px;*/
+
+	&__day-header {
+		float: left;
+		width: $size;
+		text-align: center;
+		margin-right: $spacing;
+		text-transform: uppercase;
+	}
+
+	&__day,
+	&__day-dummy {/* common styling */
+		float: left;
+		width: $size;
+		height: $size;
+		text-align: center;
+		border-radius: $radius;
+		box-sizing: border-box;
+		margin: 0 $spacing $spacing 0%;
+	}
+	&__day-dummy {
+		background: $color-ltgray;
+	}
+
+	&__day {
+		border: solid $color-ltgray 1px;
+		line-height: $size - 2px;
+	}
+
+	&__range {
+		$color: $color-red;
+
+		float: left;
+		background: $color-red;
+		color: white;
+		border-radius: $radius;
+		margin-right: $spacing;
+
+		&-start,
+		&-end {
+			color: $color;
+			background: white;
+		}
+
+		& .calendar__day {
+			border-color: $color-red;
+			margin-bottom: 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

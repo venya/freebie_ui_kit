@@ -1,0 +1,59 @@
+
+.range {
+	$thickness: 5px;
+	$marker-size: 14px;
+
+	position: relative;
+	margin: $thickness;
+
+	&__bar {
+		display: block;
+		height: $thickness;
+		background: $color-ltgray;
+		border-radius: $thickness/2;
+	}
+
+	&__marker {
+		$displace: $marker-size/2;
+
+		box-sizing: border-box;
+		display: block;
+		width: $marker-size;
+		height: $marker-size;
+		position: absolute;
+		background: white;
+		border: solid $color-blue 4px;
+		border-radius: $marker-size/2;
+		top: $thickness/2;
+		margin: -$displace 0 0 (-$displace);
+	}
+
+	&__range {
+		display: block;
+		position: absolute;
+		top: 0;
+		background: $color-blue;
+		height: $thickness;
+		border-radius: $thickness/2;
+	}
+
+	/*	Color modifiers	*/
+	&_green {
+		.range__range {
+			background: $color-green;
+		}
+		.range__marker {
+			border-color: $color-green;
+		}
+	}
+
+	&_orange {
+		.range__range {
+			background: $color-orange;
+		}
+		.range__marker {
+			border-color: $color-orange;
+		}
+	}
+
+}
