@@ -1,0 +1,78 @@
+
+/*	Checkboxes and radio	*/
+
+.checkbox,
+.radio {
+	position: relative;
+}
+
+.checkbox__input,
+.radio__input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+%checkbox-radio__mark {
+	$size: 17px;
+
+	display: inline-block;
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	vertical-align: middle;
+	border: solid $color-gray 1px;
+	position: relative;
+	margin-bottom: 2px;
+}
+
+.checkbox__mark {
+	@extend %checkbox-radio__mark;
+	border-radius: 2px;
+}
+
+.radio__mark {
+	@extend %checkbox-radio__mark;
+	border-radius: 10px;
+}
+
+.checkbox:hover .checkbox__mark,
+.checkbox_hover .checkbox__mark,
+.radio_hover .radio__mark,
+.radio:hover .radio__mark {
+	border-color: $color-green;
+}
+
+.checkbox_on .checkbox__mark {
+	background: #edfdca;
+	border-color: $color-green;
+
+	&::after {
+		content: "+";
+	}
+}
+
+.radio_on .radio__mark {
+	background: #edfdca;
+	border-color: $color-green;
+
+	&::after {
+		$size: 11px;
+		$displace: 2px;
+
+		content: "";
+		position: absolute;
+		display: block;
+		background: $color-green;
+		width: $size;
+		height: $size;
+		top: $displace;
+		left: $displace;
+		border-radius: $size/2;
+	}
+}
+
+

@@ -33,27 +33,101 @@
 	</header>
 
 	<div class="container">
-		<section>
-			<!-- switch -->
-			<div class="switch switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
-			<div class="switch switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
-			<div class="switch switch_on switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
-			<div class="switch switch_on switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
-			<!-- radio buttons -->
-			<!-- checkboxes -->
+		<div class="row">
+			<div class="col">
+				<!-- round switches -->
+				<section>
+					<div class="switch switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
+				</section>
+				<section>
+					<div class="switch switch_on switch_rounded"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
+				</section>
+			</div>
 
-			<!-- pie charts -->
-			<div class="pie-chart">
-				<div class="pie-chart__segment"></div>
-				<div class="pie-chart__inner">75%</div>
+			<div class="col">
+				<!-- squared switches -->
+				<section>
+					<div class="switch switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox"></div>
+				</section>
+				<section>
+					<div class="switch switch_on switch_icons"><i class="switch__marker"></i><input class="switch__checkbox" type="checkbox" checked="checked"></div>
+				</section>
 			</div>
-			<div class="pie-chart">
-				<div class="pie-chart__segment"></div>
+
+			<!-- checkboxes + radios -->
+			<div class="col">
+				<section>
+					<label class="checkbox">
+						<i class="checkbox__mark"></i>
+						<input type="checkbox" class="checkbox__input">
+						<span class="checkbox__text">Default</span>
+					</label>
+				</section>
+				<section>
+					<label class="radio">
+						<i class="radio__mark"></i>
+						<input type="radio" name="radio" class="radio__input">
+						<span class="radio__text">Default</span>
+					</label>
+				</section>
 			</div>
-		</section>
+
+			<div class="col">
+				<section>
+					<label class="checkbox checkbox_hover">
+						<i class="checkbox__mark"></i>
+						<input type="checkbox" class="checkbox__input">
+						<span class="checkbox__text">Hover</span>
+					</label>
+				</section>
+				<section>
+					<label class="radio radio_hover">
+						<i class="radio__mark"></i>
+						<input type="radio" name="radio" class="radio__input">
+						<span class="radio__text">Hover</span>
+					</label>
+				</section>
+			</div>
+
+			<div class="col">
+				<section>
+					<label class="checkbox checkbox_on">
+						<i class="checkbox__mark"></i>
+						<input type="checkbox" class="checkbox__input" checked="checked">
+						<span class="checkbox__text">Selected</span>
+					</label>
+				</section>
+				<section>
+					<label class="radio radio_on">
+						<i class="radio__mark"></i>
+						<input type="radio" name="radio" class="radio__input" checked="checked">
+						<span class="radio__text">Selected</span>
+					</label>
+				</section>
+			</div>
+
+			<div class="col">
+				<!-- pie charts -->
+				<section>
+					<div class="pie-chart">
+						<div class="pie-chart__segment"></div>
+						<div class="pie-chart__inner">75%</div>
+					</div>
+					<div class="pie-chart">
+						<div class="pie-chart__segment"></div>
+					</div>
+				</section>
+			</div>
+
+
+		</div>
+
+		<!-- radio buttons -->
+		<!-- checkboxes -->
+
 
 		<div class="row">
-			<div class="col-4">
+			<div class="col col-third">
 				<!-- signin -->
 				<div class="panel">
 					<div class="panel__header">
@@ -80,10 +154,12 @@
 				</section>
 			</div>
 
-			<div class="col-4">
+			<div class="col col-third">
 				<!-- calendar -->
 				<div class="panel">
 					<div class="panel__header">
+						<a class="calendar__day pull-right">&rarr;</a>
+						<a class="calendar__day">&larr;</a>
 						<h3 class="panel__title text-center">October 2014</h3>
 					</div>
 					<div class="panel__body calendar">
@@ -149,7 +225,7 @@
 				</div>
 			</div>
 
-			<div class="col-4">
+			<div class="col col-third">
 				<!-- range -->
 				<section>
 					<div class="range">

@@ -2,9 +2,23 @@
 
 
 // Set handlers for .switch
-$('.switch input').click( function(e){
-	$(this).parent('.switch').toggleClass('switch_on');
+$('.switch input').change( function(e){
+	$(this).parent('.switch').toggleClass('switch_on', this.checked);
 });
+
+// Set handlers for .checkbox
+$('.checkbox__input').change( function(e){
+	$(this).parent('.checkbox').toggleClass('checkbox_on', this.checked);
+});
+
+// Set handlers for .radio and sync current state
+function sync_radios() {
+	$('.radio__input').each(function(){
+		$(this).parent('.radio').toggleClass('radio_on', this.checked);
+	})
+}
+sync_radios();
+$('.radio input').change(sync_radios);
 
 // Video player
 $('.player__controls').click(function(e) {

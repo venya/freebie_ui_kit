@@ -15,6 +15,18 @@ body {
 }
 
 
+/*	Components	*/
+
+@import "header";
+@import "inputs";
+@import "switch";
+@import "charts";
+@import "range";
+@import "panel";
+@import "calendar";
+@import "player";
+
+
 
 /*	Utilities */
 
@@ -35,19 +47,4 @@ body {
 	text-align: center;
 }
 
-
-
-@import "header";
-
-@import "switch";
-
-@import "charts";
-
-@import "range";
-
-@import "panel";
-
-@import "calendar";
-
-@import "player";
 
