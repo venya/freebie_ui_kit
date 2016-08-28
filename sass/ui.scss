@@ -6,12 +6,14 @@
 
 @import "reset";
 @import "globals";
+@import "mixins";
 
 
 /*	Global settings and typography	*/
 
 body {
 	font-family: $font-stack;
+	font-size: $font-size;
 }
 
 
@@ -28,6 +30,43 @@ body {
 
 
 
+/*	Unsorted	*/
+
+.media {
+	$margin: 8px;
+
+	&__left {
+		float: left;
+		padding-right: $margin;
+	}
+
+	&__right {
+		float: left;
+		padding-left: $margin;
+	}
+
+	&__body {
+		overflow: hidden;
+	}
+
+	&__photo-round {
+		$size: 65px;
+		$border1: 4px;
+		$border2: 1px;
+
+		box-sizing: border-box;
+		max-width: $size;
+		max-height: $size;
+		@include border-radius($size/2);
+		border: solid white $border1;
+		margin: $border2;
+		box-shadow: 0 0 0px $border2 $color-gray;
+	}
+}
+
+
+
+
 /*	Utilities */
 
 .pull-left {
@@ -36,6 +75,8 @@ body {
 .pull-right {
 	float: right;
 }
+
+/*	Typography	*/
 
 .text-right {
 	text-align: right;
@@ -48,3 +89,12 @@ body {
 }
 
 
+.text-muted {
+	color: $color-dkgray;
+}
+.text-success {
+	color: $color-green;
+}
+.text-error {
+	color: $color-red;
+}

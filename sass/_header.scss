@@ -6,6 +6,22 @@
 	background: $color-xltgray;
 	border-bottom: solid $color-gray 1px;
 
+	&__form {
+		display: inline-block;
+	}
+
+	&__avatar {
+		$size: 32px;
+		$displace: ($height - $size)/2;
+
+		@include inline-box($size, $size);
+		@include border-radius($size/2);
+		background: $color-red no-repeat center center;
+		background-size: cover;
+		float: right;
+		margin: $displace 0 0 $displace;
+	}
+
 	&_rainbow {
 		$height: 4px;
 
@@ -27,10 +43,6 @@
 				) repeat 20px top;
 			background-size: 520px;
 		}
-	}
-
-	&__form {
-		display: inline-block;
 	}
 
 	.nav {

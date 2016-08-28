@@ -18,17 +18,18 @@
 				<li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
 			</ul>
 
+			<!-- avatar -->
+			<div class="header__avatar" style="background-image:url('images/userpic.jpg')"></div>
+
 			<!-- inline search -->
 			<form class="header__form">
-				<input class="search" type="search" placeholder="Search...">
+				<input class="input input_search" type="search" placeholder="Search...">
 			</form>
 
 			<!-- notifications -->
 			<div class="icon"></div>
 			<div class="icon"></div>
 
-			<!-- avatar -->
-			<div class="avatar"></div>
 		</div>
 	</header>
 
@@ -122,9 +123,6 @@
 
 		</div>
 
-		<!-- radio buttons -->
-		<!-- checkboxes -->
-
 
 		<div class="row">
 			<div class="col col-third">
@@ -135,13 +133,16 @@
 					</div>
 					<div class="panel__body">
 						<div class="form-row">
-							<input value="John D" placeholder="Username">
+							<input class="input" value="John D" placeholder="Username">
+							<i class="icon icon-user"></i>
 						</div>
 						<div class="form-row">
-							<input type="password" placeholder="Password">
+							<input class="input" type="password" placeholder="Password">
+							<i class="icon icon-lock"></i>
 						</div>
-						<div class="form-row">
-							<button class="btn btn-primary">log in</button>
+						<div class="form-row text-right">
+							<button class="btn btn_primary">log in</button>
+							<a class="btn btn_green">log in</a>
 						</div>
 					</div>
 				</div>
@@ -217,10 +218,20 @@
 				<!-- profile -->
 				<div class="panel">
 					<div class="panel__body">
-						[user profile]
+						<div class="media">
+							<div class="media__left">
+								<img src="images/emma.jpg" class="media__photo-round">
+							</div>
+							<div class="media__body">
+								<h3>Emma Stone</h3>
+								<p class="text-muted">The Amazing Spider-Man, Gangsters Squad, The Croods</p>
+							</div>
+						</div>
 					</div>
-					<div class="panel__footer">
-						172 <3 | 34 ppl | 210
+					<div class="panel__buttons">
+						<a class="btn btn_green"><i class="icon icon-heart"></i>172</a>
+						<a class="btn btn_red"><i class="icon icon-people"></i>34</a>
+						<a class="btn btn_primary"><i class="icon icon-vuew"></i>210</a>
 					</div>
 				</div>
 			</div>
@@ -254,7 +265,7 @@
 				<!-- player -->
 				<section>
 					<div class="player">
-						<video class="player__video" poster="https://media.giphy.com/media/icamgh2X6Cego/giphy.gif" co__ntrols>
+						<video class="player__video" poster="images/video-cover.gif">
 							<source type="video/mp4" src="http://www.mp4point.com/downloads/e4d51858df05.mp4">
 						</video>
 						<div class="player__controls">[>]</div>

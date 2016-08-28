@@ -3,6 +3,7 @@
 	$border-color: $color-gray;
 	$h-padding: 15px;
 	$v-padding: 10px;
+	$radius: 3px;
 
 	display: block;
 	margin-bottom: 20px;
@@ -32,6 +33,26 @@
 		padding: $v-padding $h-padding;
 	}
 
+	&__buttons {
+		font-size: 0;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		border-radius: 0 0 $radius $radius;
+		overflow: hidden;
+		margin-top: -1px;
+
+		& > .btn {
+			display: table-cell;
+			padding: 3px 2px;
+			@include border-radius(0);
+
+			&:not(:first-child) {
+				border-left: solid white 1px;
+			}
+		}
+	}
+
 	/*	hide top border for multiple adjacent bodies	*/
 	&__body + &__body,
 	&__header + &__body,
@@ -42,14 +63,14 @@
 	&__header:first-child,
 	&__body:first-child,
 	&__footer:first-child {
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
+		border-top-left-radius: $radius;
+		border-top-right-radius: $radius;
 	}
 
 	&__header:last-child,
 	&__body:last-child,
 	&__footer:last-child {
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: $radius;
+		border-bottom-right-radius: $radius;
 	}
 }

@@ -1,0 +1,19 @@
+
+/*	Prevent text selection by mouse	*/
+@mixin no-select() {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+
+/*	Border radius */
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+
+
+@mixin inline-box($width, $height) {
+	display: inline-block;
+	width: $width;
+	height: $height;
+}
