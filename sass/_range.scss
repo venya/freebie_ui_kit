@@ -37,6 +37,31 @@
 		border-radius: $thickness/2;
 	}
 
+	&__labels {
+		color: $color-dkgray;
+		margin-top: $thickness;
+		position: relative;
+
+		/*	preserve vertical space	*/
+		&:before {
+			content: '\00a0';
+		}
+	}
+
+	&__label {
+		$width: 20px;
+
+		position: absolute;
+		top: 0;
+		display: block;
+		/* attempt to align labels by left only
+		width: $width;
+		text-align: center;
+		margin-left: -($width/2);
+		*/
+		margin-left: -0.5ex;
+	}
+
 	/*	Color modifiers	*/
 	&_green {
 		.range__range {
