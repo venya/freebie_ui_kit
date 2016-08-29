@@ -139,7 +139,7 @@
 					</div>
 					<div class="panel__body">
 						<div class="form-row with-icon with-icon_left">
-							<input class="input" value="John D" placeholder="Username">
+							<input class="input" value="John D" placeholder="Username" autofocus="autofocus">
 							<i class="with-icon__icon icon_user-o"></i>
 						</div>
 						<div class="form-row with-icon with-icon_left">
@@ -147,8 +147,7 @@
 							<i class="with-icon__icon icon_lock"></i>
 						</div>
 						<div class="form-row text-right">
-							<button class="btn btn_primary">log in</button>
-							<a class="btn btn_green">log in</a>
+							<button class="btn btn_primary" type="submit">log in</button>
 						</div>
 					</div>
 				</div>
@@ -247,7 +246,7 @@
 				<section>
 					<div class="range">
 						<div class="range__bar"></div>
-						<div class="range__marker" style="left: 20%"></div>
+						<div class="range__marker" style="left: 30%"><div class="range__tooltip">30</div></div>
 					</div>
 				</section>
 
@@ -258,8 +257,11 @@
 						<div class="range__marker" style="left: 10%"></div>
 						<div class="range__marker" style="left: 75%"></div>
 						<div class="range__labels">
-							<span class="range__label">0%</span>
-							<span class="range__label" style="right: 0%;">100%</span>
+							<span class="range__label">0</span>
+							<span class="range__label" style="left: 25%;">25</span>
+							<span class="range__label" style="left: 50%;">50</span>
+							<span class="range__label" style="left: 75%;">75</span>
+							<span class="range__label" style="right: 0%;">100</span>
 						</div>
 					</div>
 				</section>
@@ -270,11 +272,8 @@
 						<div class="range__range" style="width: 50%"></div>
 						<div class="range__marker" style="left: 50%"></div>
 						<div class="range__labels">
-							<span class="range__label">0</span>
-							<span class="range__label" style="left: 25%;">25</span>
-							<span class="range__label" style="left: 50%;">50</span>
-							<span class="range__label" style="left: 75%;">75</span>
-							<span class="range__label" style="right: 0%;">100</span>
+							<span class="range__label">0%</span>
+							<span class="range__label" style="right: 0%;">100%</span>
 						</div>
 					</div>
 				</section>

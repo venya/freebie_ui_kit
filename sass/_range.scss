@@ -62,6 +62,34 @@
 		margin-left: -0.5ex;
 	}
 
+	&__tooltip {
+		$width: 30px;
+		$height: 20px;
+
+		position: absolute;
+		display: block;
+		width: $width;
+		height: $height;
+		line-height: $height;
+		background: $color-blue;
+		color: white;
+		margin-left: -$width/2 + $marker-size/2 - $thickness +1px;
+		margin-top: -$height -$thickness*2;
+		text-align: center;
+		@include border-radius(3px);
+
+		&::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			margin-left: $width/2 - $thickness;
+			border-style: solid;
+			border-width: $thickness $thickness 0 $thickness;
+			border-color: $color-blue transparent transparent transparent;
+		}
+	}
+
 	/*	Color modifiers	*/
 	&_green {
 		.range__range {
