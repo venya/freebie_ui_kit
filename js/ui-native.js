@@ -16,7 +16,14 @@ document.querySelectorAll('.checkbox input').forEach( function(el) {
 } )
 
 //	Set click handlers for .radio components
-// ..
+function radio_sync() {
+	document.querySelectorAll('.radio__input').forEach( function(el){
+		toggleClassName(parentClassSelector(el, 'radio'), 'radio_on', el.checked);
+	})
+}
+document.querySelectorAll('.radio__input').forEach( function(el){
+	el.onclick = radio_sync;
+})
 
 
 
@@ -42,7 +49,7 @@ function hasClass(el, className) {
 
 function parentClassSelector(el, className) {
 	while (el = el.parentElement) {
-		if (new RegExp('(\\s|^)' + className + '(\\s|$)').test(el.className))
+		if (hasClass(el, className))
 			return el;
 	};
 }
