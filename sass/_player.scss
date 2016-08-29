@@ -3,6 +3,8 @@
 	$height: 160px;
 	$controls-height: 32px;
 	$controls-margin: 15px;
+	$control-spacing: 6px;
+	$control-icon-size: 18px;
 
 	background: black;
 	background-repeat: no-repeat;
@@ -18,6 +20,7 @@
 	}
 
 	&__controls {
+		box-sizing: border-box;
 		height: $controls-height;
 		background: rgba(255,255,255, 0.2);
 		border-radius: 3px;
@@ -25,5 +28,41 @@
 		bottom: $controls-margin;
 		right: $controls-margin;
 		left: $controls-margin;
+		overflow: hidden;
+		padding: $control-spacing;
 	}
+
+	&__button {
+		@include make-icon($control-icon-size);
+		float: right;
+		margin-left: $control-spacing;
+
+		&:active {
+			color: $color-red;
+		}
+	}
+
+	&__play {
+		@include make-icon($control-icon-size);
+		@include icon-glyph('\f3a9');
+		float: left;
+		margin-left: 0;
+		margin-right: $control-spacing;
+	}
+
+	&__pause {
+		@include icon-glyph('\f3a6');
+	}
+
+	&__full-screen {
+		@include icon-glyph('\f16d');
+	}
+
+	&__mute {
+		@include icon-glyph('\f3bc');
+	}
+	&__muted {
+		@include icon-glyph('\f3bb');
+	}
+
 }
