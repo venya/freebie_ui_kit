@@ -47,13 +47,13 @@ body {
 	background: $color-red;
 	color: white;
 	vertical-align: super;
-	@include no-select();
 
 	/* Hide empty containers	*/
 	&:empty {
 		display: none;
 	}
 }
+
 
 .media {
 	$margin: 8px;

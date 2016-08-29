@@ -7,7 +7,8 @@
 
 
 /*	Layout	*/
-$page-width: 760px;
+$page-width: 780px;
+$column-gap: 15px;
 
 /*	Colors	*/
 $background: white;
@@ -18,10 +19,15 @@ body {
 	background: $background;
 }
 
+
 .container {
 	width: $page-width;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.header {
+	min-width: $page-width;
 }
 
 /*	Used for vertical spacing	*/
@@ -37,8 +43,12 @@ section {
 	.col {
 		vertical-align: top;
 		display: table-cell;
+		padding-left: $column-gap;
+	}
+	.col:first-child {
+		padding-left: 0;
 	}
 	.col-third {
-		width: 33%;
+		width: ($page-width - 2*$column-gap) / 3;
 	}
 }
