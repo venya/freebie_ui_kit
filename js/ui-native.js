@@ -15,7 +15,18 @@ document.querySelectorAll('.checkbox input').forEach( function(el) {
 	}
 } )
 
+//	Set click handlers for .radio components
+// ..
 
+
+
+
+// Set handler for .select opening
+document.querySelectorAll('.select__caret').forEach( function(el) {
+	el.onclick = function() {
+		toggleClassName(parentClassSelector(el, 'select'), 'select_open');
+	}
+} )
 
 
 
@@ -23,6 +34,11 @@ document.querySelectorAll('.checkbox input').forEach( function(el) {
 
 
 //	Functions reimplemented
+
+
+function hasClass(el, className) {
+	return new RegExp('(\\s|^)' + className + '(\\s|$)').test(el.className);
+}
 
 function parentClassSelector(el, className) {
 	while (el = el.parentElement) {
@@ -33,6 +49,9 @@ function parentClassSelector(el, className) {
 
 function toggleClassName(el, className, state) {
 	if (!el) return;
+	if ("undefined" == typeof(state)) {
+		state = !hasClass(el, className);
+	}
 	el.classList.remove(className);
 	if (state) el.className += ' '+className;
 }
