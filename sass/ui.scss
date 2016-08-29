@@ -19,6 +19,7 @@ body {
 
 /*	Components	*/
 
+@import "icons";
 @import "header";
 @import "inputs";
 @import "switch";
@@ -31,6 +32,28 @@ body {
 
 
 /*	Unsorted	*/
+
+.badge {
+	$size: 20px;
+	$font-size: 12px;
+
+	display: inline-block;
+	width: $size;
+	font-size: $font-size;
+	$height: $size;
+	line-height: $size;
+	@include border-radius($size);
+	text-align: center;
+	background: $color-red;
+	color: white;
+	vertical-align: super;
+	@include no-select();
+
+	/* Hide empty containers	*/
+	&:empty {
+		display: none;
+	}
+}
 
 .media {
 	$margin: 8px;
@@ -63,7 +86,6 @@ body {
 		box-shadow: 0 0 0px $border2 $color-gray;
 	}
 }
-
 
 
 

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>UI Kit Demo Page</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/ui.css">
 	<link rel="stylesheet" type="text/css" href="styles/demo.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -22,13 +23,18 @@
 			<div class="header__avatar" style="background-image:url('images/userpic.jpg')"></div>
 
 			<!-- inline search -->
-			<form class="header__form">
-				<input class="input input_search" type="search" placeholder="Search...">
+			<form class="header__form with-icon with-icon_right">
+				<input class="input input_search" type="text" placeholder="Search...">
+				<i class="with-icon__icon icon_search"></i>
 			</form>
 
 			<!-- notifications -->
-			<div class="icon"></div>
-			<div class="icon"></div>
+			<div class="header__icon icon_chat">
+				<span class="badge">4</span>
+			</div>
+			<div class="header__icon icon_notification">
+				<span class="badge">14</span>
+			</div>
 
 		</div>
 	</header>
@@ -132,13 +138,13 @@
 						<h3 class="panel__title">Sign In</h3>
 					</div>
 					<div class="panel__body">
-						<div class="form-row">
+						<div class="form-row with-icon with-icon_left">
 							<input class="input" value="John D" placeholder="Username">
-							<i class="icon icon-user"></i>
+							<i class="with-icon__icon icon_user-o"></i>
 						</div>
-						<div class="form-row">
+						<div class="form-row with-icon with-icon_left">
 							<input class="input" type="password" placeholder="Password">
-							<i class="icon icon-lock"></i>
+							<i class="with-icon__icon icon_lock"></i>
 						</div>
 						<div class="form-row text-right">
 							<button class="btn btn_primary">log in</button>
@@ -229,9 +235,9 @@
 						</div>
 					</div>
 					<div class="panel__buttons">
-						<a class="btn btn_green"><i class="icon icon-heart"></i>172</a>
-						<a class="btn btn_red"><i class="icon icon-people"></i>34</a>
-						<a class="btn btn_primary"><i class="icon icon-vuew"></i>210</a>
+						<a class="btn btn_green"><i class="btn__icon icon_like"></i>172</a>
+						<a class="btn btn_red"><i class="btn__icon icon_user"></i>34</a>
+						<a class="btn btn_primary"><i class="btn__icon icon_view"></i></i>210</a>
 					</div>
 				</div>
 			</div>

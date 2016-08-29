@@ -1,0 +1,93 @@
+/**
+*	Vector icons iplementation (via icon-font)
+*	Along with othe icon helpers.
+*/
+
+$icon-font: 'Material-Design-Iconic-Font';
+
+@mixin make-icon($font-size) {
+	display: inline-block;
+	font: normal normal normal $font-size/1 $icon-font;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin icon-glyph($glyph) {
+	&::before {
+		content: $glyph;
+	}
+}
+
+
+.icon {
+	@include make-icon(20px);
+	font-size: inherit;
+
+	/*	Icon glyphs	*/
+
+	&_search {
+		@include icon-glyph('\f1c3');
+	}
+	&_user {
+		@include icon-glyph('\f207');
+	}
+	&_user-o {
+		@include icon-glyph('\f206');
+	}
+	&_lock {
+		@include icon-glyph('\f190');
+	}
+	&_like {
+		@include icon-glyph('\f15e');
+	}
+	&_view {
+		@include icon-glyph('\f15c');
+	}
+	&_notification {
+		@include icon-glyph('\f1fb');
+	}
+	&_chat {
+		@include icon-glyph('\f261');
+	}
+
+}
+
+
+
+/*	Combining inputs with icons (left ot right)	*/
+.with-icon {
+	$icon-padding: 8px;
+	$font-size: 20px;
+
+	position: relative;
+
+	&__icon {
+		position: absolute;
+		@include make-icon(20px);
+		height: $input-height;
+		line-height: $input-height;
+		top: 0;
+		color: $color-gray;
+
+		.with-icon_left & {
+			left: $icon-padding;
+		}
+
+		.with-icon_right & {
+			right: $icon-padding;
+		}
+
+		.input:focus + & {
+			color: $color-blue;
+		}
+	}
+
+	&_left .input {
+		padding-left: 25px;
+	}
+}
+
+
+

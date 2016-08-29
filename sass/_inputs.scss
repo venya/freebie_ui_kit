@@ -52,6 +52,12 @@
 	@include border-radius($radius);
 	@include no-select();
 
+	&__icon {
+		@include make-icon(20px);
+		vertical-align: middle;
+		margin: 0 4px 2px 0;
+	}
+
 	&_primary {
 		background: $color-blue;
 		color: white;

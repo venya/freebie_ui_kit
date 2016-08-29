@@ -1,13 +1,31 @@
 
 .header {
 	$height: 56px;
+	$icon-spacing: 10px;
 
 	height: 56px;
 	background: $color-xltgray;
 	border-bottom: solid $color-gray 1px;
+	@include no-select();
+	
 
 	&__form {
 		display: inline-block;
+	}
+
+	&__icon {
+		@include make-icon(28px);
+		line-height: $height;
+		color: $color-gray;
+		float: right;
+		margin-left: $icon-spacing;
+
+		.badge {
+			margin-left: -15px;
+			margin-top: 10px;
+			vertical-align: top;
+			border: solid $color-xltgray 1px;
+		}
 	}
 
 	&__avatar {
@@ -19,7 +37,7 @@
 		background: $color-red no-repeat center center;
 		background-size: cover;
 		float: right;
-		margin: $displace 0 0 $displace;
+		margin: $displace 0 0 $icon-spacing;
 	}
 
 	&_rainbow {
