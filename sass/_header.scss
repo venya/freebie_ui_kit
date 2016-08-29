@@ -1,6 +1,7 @@
+$header-height: 56px;
 
 .header {
-	$height: 56px;
+	$height: $header-height;
 	$icon-spacing: 10px;
 
 	height: 56px;
@@ -38,6 +39,10 @@
 		background-size: cover;
 		float: right;
 		margin: $displace 0 0 $icon-spacing;
+	}
+
+	&__form {
+		margin: 0 20px;
 	}
 
 	&_rainbow {

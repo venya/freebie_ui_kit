@@ -150,9 +150,12 @@
 .checkbox_on .checkbox__mark {
 	background: #edfdca;
 	border-color: $color-green;
+	text-align: center;
 
 	&::after {
-		content: "+";
+		content: "\f26b";
+		color: $color-green;
+		@include make-icon(14px);
 	}
 }
 
