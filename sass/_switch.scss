@@ -61,6 +61,16 @@
 		}
 	}
 
+	&_icons {
+		&::after {
+			@include make-icon(22px);
+			content: '\f136';
+		}
+		&.switch_on::after {
+			content: '\f26b';
+		}
+	}
+
 	&__checkbox {
 		position: absolute;
 		opacity: 0;
