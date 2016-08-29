@@ -32,6 +32,42 @@
 		padding: $control-spacing;
 	}
 
+	&__timeline {
+		$thickness: 6px;
+
+		background: rgba(0,0,0, 0.3);
+		height: $thickness;
+		@include border-radius($thickness);
+		position: relative;
+
+		&_space {
+			overflow: hidden;
+			padding: ($controls-height - $thickness)/2 -$control-spacing 0;
+		}
+
+		&_progress {
+			background: $color-red;
+			height: $thickness;
+			@include border-radius($thickness);
+			position: absolute;
+			width: 0;
+		}
+
+		&_position {
+			$size: 10px;
+			$displace: ($thickness - $size)/2;
+
+			background: white;
+			display: block;
+			width: $size;
+			height: $size;
+			@include border-radius($size);
+			position: absolute;
+			top: $displace;
+			margin-left: $displace -$thickness;
+		}
+	}
+
 	&__button {
 		@include make-icon($control-icon-size);
 		float: right;
