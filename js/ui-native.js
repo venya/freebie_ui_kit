@@ -25,15 +25,40 @@ document.querySelectorAll('.radio__input').forEach( function(el){
 	el.onclick = radio_sync;
 })
 
-
-
-
 // Set handler for .select opening
 document.querySelectorAll('.select__caret').forEach( function(el) {
 	el.onclick = function() {
 		toggleClassName(parentClassSelector(el, 'select'), 'select_open');
-	}
+	};
 } )
+
+
+
+
+// Video player controls
+// 1. play/pause
+document.querySelector('.player__play').onclick = function() {
+	var video = document.querySelector('.player__video');
+	toggleClassName(this, 'player__pause');
+	video.paused? video.play() : video.pause();
+};
+// 2. mute/unmute
+document.querySelector('.player__mute').onclick = function() {
+	var video = document.querySelector('.player__video');
+	toggleClassName(this, 'player__muted');
+	video.muted = !video.muted;
+};
+// 3. full screen mode
+document.querySelector('.player__full-screen').onclick = function() {
+	var video = document.querySelector('.player__video');
+	if (video.requestFullscreen) {
+		video.requestFullscreen();
+	} else if (video.mozRequestFullScreen) {
+		video.mozRequestFullScreen();
+	} else if (video.webkitRequestFullscreen) {
+		video.webkitRequestFullscreen();
+	}
+};
 
 
 
