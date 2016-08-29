@@ -17,3 +17,12 @@
 	width: $width;
 	height: $height;
 }
+
+/*	Create triangle via bordrs	*/
+@mixin border-triangle($border-width, $border-colors) {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: $border-width;
+	border-color: $border-colors;
+}

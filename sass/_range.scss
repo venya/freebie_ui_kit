@@ -81,12 +81,8 @@
 		&::after {
 			content: "";
 			display: block;
-			width: 0;
-			height: 0;
+			@include border-triangle($thickness $thickness 0 $thickness, $color-blue transparent transparent transparent)
 			margin-left: $width/2 - $thickness;
-			border-style: solid;
-			border-width: $thickness $thickness 0 $thickness;
-			border-color: $color-blue transparent transparent transparent;
 		}
 	}
 
