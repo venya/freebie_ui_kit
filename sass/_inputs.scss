@@ -57,6 +57,7 @@
 		display: none;
 		border: solid $border-color 1px;
 		position: absolute;
+		z-index: 10;
 		list-style: none;
 		left: -1px;
 		width: 100%;
@@ -64,6 +65,7 @@
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		color: $color-dkgray;
+		background: white;
 
 	}
 
@@ -91,12 +93,12 @@
 		text-align: center;
 		width: $height;
 		height: $height;
-		z-index: 1;
 
 		&::after {
 			content: "";
 			display: inline-block;
 			@include border-triangle($caret-size $caret-size 0 $caret-size, $color-dkgray transparent transparent transparent);
+			margin-bottom: $caret-size/2;
 		}
 	}
 
@@ -113,6 +115,7 @@
 		.select__caret {
 			background: white;
 			border-color: $border-color;
+			z-index: 20;
 
 			&::after {
 				@include border-triangle(0 $caret-size $caret-size $caret-size, transparent transparent $color-dkgray transparent);

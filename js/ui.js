@@ -20,6 +20,11 @@ function sync_radios() {
 sync_radios();
 $('.radio input').change(sync_radios);
 
+// Set handler for .select opening
+$('.select__caret').click(function() {
+	$(this).parent('.select').toggleClass('select_open');
+})
+
 // Video player
 $('.player__controls').click(function(e) {
 	var video = $(this).parent('.player').find('video').get(0);
